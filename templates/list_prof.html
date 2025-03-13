@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="mt-5">
+    <h2 align="left">Список профессий</h2>
+        {% if list=='ol' %}
+        <ol style="padding-left: 80px;">
+            {% for item in professions %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ol>
+        {% elif list=='ul' %}
+        <ul style="padding-left: 80px;">
+            {% for item in professions %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Вы ввели неверный параметр!</p>
+    {% endif %}
+</div>
+{% endblock %}
