@@ -110,6 +110,9 @@ def results(nickname, level, rating):
 
 @app.route('/gallery')
 def gallery():
+    images = [url_for('static', filename='img/mars.webp'),
+              url_for('static', filename='img/mars2.jpg'),
+              url_for('static', filename='img/mars3.jpg')]
     return """<!doctype html>
 <html lang="en">
 <head>
@@ -135,15 +138,15 @@ def gallery():
         <div class="carousel-inner">
             <!-- Single item -->
             <div class="carousel-item active">
-                <img src="static/img/mars.webp" class="d-block w-100" alt="Sunset Over the City">
+                <img src="{}" class="d-block w-100" alt="Sunset Over the City">
             </div>
             <!-- Single item -->
             <div class="carousel-item">
-                <img src="static/img/mars2.jpg" class="d-block w-100" alt="Canyon at Night">
+                <img src="{}" class="d-block w-100" alt="Canyon at Night">
             </div>
             <!-- Single item -->
             <div class="carousel-item">
-                <img src="static/img/mars3.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea">
+                <img src="{}" class="d-block w-100" alt="Cliff Above a Stormy Sea">
             </div>
         </div>
 
@@ -159,7 +162,7 @@ def gallery():
     </div>
 </body>
 </html>
-    """
+    """.format(*images)
 
 
 if __name__ == '__main__':
