@@ -107,8 +107,9 @@ def results(nickname, level, rating):
         </body>
         </html>""".format(*spisok)
 
-@app.route('/choice')
-def choice():
+
+@app.route('/gallery')
+def gallery():
     return """<!doctype html>
 <html lang="en">
 <head>
@@ -159,6 +160,7 @@ def choice():
 </body>
 </html>
     """
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
