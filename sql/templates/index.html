@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> align="center">Журнал работ<</h2>
+{% for job in jobs %}
+<h3> Работа № {{ job.id }}</h3>
+{% endfor %}
+
+{% endblock %}
