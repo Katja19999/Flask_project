@@ -3,23 +3,24 @@
 {% block content %}
 
 <h2 align="center">Журнал работ</h2>
+
 {% for job in jobs %}
 <h3> Работа № {{ job.id }}</h3>
-<div class="table_container">
-    <table>
-        <tr>
-            <td> Название работы </td>
-            <td> Руководитель </td>
-            <td> Должность </td>
-            <td> Список исполнителей  </td>
-            <td> Признак завершения </td>
+<div class="table_container my_container">
+    <table class="my_table">
+        <tr class="work_table_row">
+            <td class="title" align="center"> Название работы </td>
+            <td class="title" align="center"> Руководитель </td>
+            <td class="title" align="center"> Должность </td>
+            <td class="title" align="center"> Список исполнителей  </td>
+            <td class="title" align="center"> Признак завершения </td>
         </tr>
         <tr>
-            <td> job.job </td>
-            <td> job.team_leader </td>
-            <td> job.work_size </td>
-            <td> job.collaborators  </td>
-            <td> job.is_finished </td>
+            <td class="description" align="center"> {{ job.job }} </td>
+            <td class="description" align="center"> {{ job.team_leader }} </td>
+            <td class="description" align="center"> {{ job.work_size }} </td>
+            <td class="description" align="center"> {{ job.collaborators }} </td>
+            <td class="description" align="center"> {{ job.is_finished }} </td>
         </tr>
     </table>
 </div>
