@@ -2,9 +2,27 @@
 
 {% block content %}
 
-<h2> align="center">Журнал работ<</h2>
+<h2 align="center">Журнал работ</h2>
 {% for job in jobs %}
 <h3> Работа № {{ job.id }}</h3>
+<div class="table_container">
+    <table>
+        <tr>
+            <td> Название работы </td>
+            <td> Руководитель </td>
+            <td> Должность </td>
+            <td> Список исполнителей  </td>
+            <td> Признак завершения </td>
+        </tr>
+        <tr>
+            <td> job.job </td>
+            <td> job.team_leader </td>
+            <td> job.work_size </td>
+            <td> job.collaborators  </td>
+            <td> job.is_finished </td>
+        </tr>
+    </table>
+</div>
 {% endfor %}
 
 {% endblock %}
