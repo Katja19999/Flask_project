@@ -5,9 +5,10 @@
 <h2 align="center">Журнал работ</h2>
 
 {% for job in jobs %}
-<h3> Работа № {{ job.id }}</h3>
+<div align="center">
+<h3 style="color: #FC74FD"> Работа № {{ job.id }}</h3>
 <div class="table_container my_container">
-    <table class="my_table">
+    <table>
         <tr class="work_table_row">
             <td class="title" align="center"> Название работы </td>
             <td class="title" align="center"> Руководитель </td>
@@ -16,14 +17,15 @@
             <td class="title" align="center"> Признак завершения </td>
         </tr>
         <tr>
-            <td class="description" align="center"> {{ job.job }} </td>
-            <td class="description" align="center"> {{ job.team_leader }} </td>
-            <td class="description" align="center"> {{ job.work_size }} </td>
-            <td class="description" align="center"> {{ job.collaborators }} </td>
-            <td class="description" align="center"> {{ job.is_finished }} </td>
+            <td class="description" bgcolor="50c878" align="center"> {{ job.job }} </td>
+            <td class="description" bgcolor="50c878" align="center"> {{ job.team_leader }} </td>
+            <td class="description" bgcolor="50c878" align="center"> {{ job.work_size }} </td>
+            <td class="description" bgcolor="50c878" align="center"> {{ job.collaborators }} </td>
+            <td class="description" bgcolor="50c878" align="center"> {{ job.is_finished }} </td>
         </tr>
     </table>
 </div>
+    </div>
 {% endfor %}
 
 {% endblock %}
