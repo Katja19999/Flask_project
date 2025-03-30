@@ -7,12 +7,22 @@ from data.jobs import Jobs
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
 from data.users import User
+from flask_restful import Api
+from sql.api_v2.jobs_api_v2 import JobsResource, JobsListResource
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+api_version2 = Api(app)
+
+
+
+
+
+api_version2.add_resource(JobsResource, '/api/v2/jobs/<int:job_id>')
+api_version2.add_resource(JobsListResource, '/api/v2/jobs')
 
 @login_manager.user_loader
 def load_user(user_id):
